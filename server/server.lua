@@ -283,7 +283,6 @@ function giveItem(source, player, reason, society, amount)
     local job = xPlayer.getJob().name
     local forcePay = false
     
-    -- Vérifier si le job de xPlayer est dans la liste des jobs qui doivent payer de force
 
             ox_inventory:AddItem(player, Config.BillingItem, 1, {
                 reason = reason, society = society, status = Config.BillingTranslation.notPaid, amount = amount, from = name,
@@ -307,7 +306,7 @@ end
 
 function log(description, job, color)
     local webhook = Config.JobWebhooks
-    if not webhook then return end -- Si aucun webhook n'est trouvé pour le job, on ne fait rien
+    if not webhook then return end 
 
     PerformHttpRequest(webhook, function() end, "POST", json.encode({
         embeds = {
