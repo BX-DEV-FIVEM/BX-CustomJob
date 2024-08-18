@@ -2,13 +2,15 @@
 
 ![2|690x388](upload://aHnrL6u9wXIrHPGlxi18p0fmgTU.jpeg)
 
----
+***
 
 Discover BX-CustomJob, a FiveM script that enhances the gaming experience for players on your server. This script offers a fully immersive experience in a custom job, with complete job management featuring customizable functionalities, ranging from work uniforms to billing management, service vehicles, personalized shops, collection points, and much more. Provide your players with an immersive and optimized work experience with a 100% customizable script.
 
+***
+
+ **Features**
 
 
-> **Features**
 
 :mega: Configurable Notifications: Supports OX / OKOK or ESX notifications.
 
@@ -37,8 +39,8 @@ Discover BX-CustomJob, a FiveM script that enhances the gaming experience for pl
 
 :arrows_counterclockwise: Automated Updates: Automatic update checks to ensure users always have the latest version.
 
-
-> **Dependencies**
+***
+ **Dependencies**
 
 * **ESX**
 * **OX_lib** 
@@ -46,10 +48,10 @@ Discover BX-CustomJob, a FiveM script that enhances the gaming experience for pl
 * **Ox_target**
 
 
----
+***
 
 
-> **Configuration**
+ **Configuration**
 
 <details>
 <summary><strong>Config.lua</strong></summary>
@@ -694,29 +696,28 @@ Config.BillingTranslation = {
 </details>
 
 
+***
 
 
-> **Live Preview**
+ **Live Preview**
 
-https://www.youtube.com/watch?v=qe2pbI6AR3E
+[YOUTUBE](https://www.youtube.com/watch?v=qe2pbI6AR3E)
 
 ***
 
-> **Installation**
+ **Installation**
 
 ⚠️ Check Installation folder ⚠️
 
 
 ***
 
-> **BX-DOCUMENTATION**
+ **BX-DOCUMENTATION**
 
 
 [DOCUMENTATION](https://bx-devs.gitbook.io/doc)
 
-***
 
 
----
 
 ![Logo BX icon|96x96](upload://zLKBbrtFdF46TZ1KR4WOrnFK6r8)
