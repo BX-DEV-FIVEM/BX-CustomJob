@@ -1,6 +1,8 @@
-![1|690x388](upload://hFtMHvrnVLEJ016LvAecSLiHXNG.jpeg)
 
-![2|690x388](upload://aHnrL6u9wXIrHPGlxi18p0fmgTU.jpeg)
+![1](https://github.com/user-attachments/assets/0b81ac14-3ae5-4960-8eb9-7d166b7fc6ed)
+
+![2](https://github.com/user-attachments/assets/7520044d-b366-4d9f-ac83-fad8119ef377)
+
 
 ***
 
