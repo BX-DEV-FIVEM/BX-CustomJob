@@ -13,7 +13,7 @@ $$ |  $$ |$$ |  $$ |$$ |  $$ |
 
 ---- To add new jobs use this pattern ----
 
--- Change "society_gouvernement" / "JobName" / "society_job_name" and add to sql
+-- Change "society_job_name" / "JobName" / "society_job_name" and add to sql
 
 INSERT INTO `addon_account` (name, label, shared) VALUES
 	('society_job_name', 'JobName', 1)
