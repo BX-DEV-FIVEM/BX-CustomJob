@@ -721,8 +721,5 @@ Config.BillingTranslation = {
 
 
 
-![Uploading Logo BX icon.png…]()
 
-
-
-
+![Logo BX icon](https://github.com/user-attachments/assets/2c9e2ac8-4d56-4b0b-b2eb-2f0025972627)
