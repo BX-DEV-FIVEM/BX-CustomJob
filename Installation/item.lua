@@ -78,21 +78,22 @@ client = {
 
 -- If use bx-billing system :
 
+--  WARNING : If you duplicate the script, do this only once
+
 -- add to ox_inventory/modules/items/client.lua : 
 
 
 
-local BillingResource = exports["BX-CustomJob"]
+local BillingResource = exports["BX-******"] --- Change BX-****** 
 
 Item('billing', function(data, slot)
 BillingResource:useBillingItem(data)
 end)
 
 
+
 -- Add to ox_inventory/data/items.lua : 
 
-
---  WARNING : If you duplicate the script, do this only once
 
 ['billing'] = {
 	label = 'name_item',
