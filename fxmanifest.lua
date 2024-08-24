@@ -5,7 +5,7 @@ lua54 'yes'
 name 'BX-CustomJob'
 author 'BX-DEV'
 description 'Custom Job For ESX / OX'
-version 'V.1.0'
+version 'V.1.3'
 url 'https://github.com/xB3NDO'
 
 
