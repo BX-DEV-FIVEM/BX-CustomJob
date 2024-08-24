@@ -1,4 +1,4 @@
-local version = 'V.1.0'
+local version = 'V.1.3'
 local expectedPrefix = "BX-" -- Préfixe attendu pour le nom de la ressource
 
 if Config.CheckUpdate then
