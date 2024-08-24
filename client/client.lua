@@ -63,6 +63,7 @@ exports.ox_target:addBoxZone({
             -- icon = 'fa-solid fa-building',
             label = Strings['boss_menu'],
             groups = Config.job_name,
+            distance = Config.DistanceOxTarget,
             onSelect = function(data)
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name and ESX.PlayerData.job.grade_name == 'boss' then
                     TriggerEvent('esx_society:openBossMenu', Config.job_name, function(data, menu)
@@ -143,6 +144,7 @@ if Config.ShopOn then
                     event = 'BX-' .. Config.job_name ..':vendor:checkJob',
                     -- -- icon = 'fa-solid fa-shopping-cart',
                     groups = Config.job_name,
+                    distance = Config.DistanceOxTarget,
                     label = Strings['buy_object']
                 }
             }
@@ -339,6 +341,7 @@ local function addHarvestZones()
                     -- icon = 'fa-solid fa-circle-check',
                     label = point.label,
                     groups = Config.job_name,
+                    distance = Config.DistanceOxTarget,
                     onSelect = function()
                         if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                             if checkPointAvailability(point) then
@@ -457,6 +460,7 @@ lib.registerContext({
             -- icon = 'fa-solid fa-warehouse',
             label = Strings['garage'],
             groups = Config.job_name,
+            distance = Config.DistanceOxTarget,
             onSelect = function(data)
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                     lib.showContext('garage ' .. Config.job_name)
@@ -513,13 +517,14 @@ exports.ox_target:addBoxZone({
             -- icon = 'fa-solid fa-bullseye',
             label =  Strings['craft_use1'],
             groups = Config.job_name,
+            distance = Config.DistanceOxTarget,
             onSelect = function(data)
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                     lib.showContext(Strings['craft1'])
                 end
         	end
         }
-    }
+    },
 })
 
 
@@ -569,6 +574,7 @@ exports.ox_target:addBoxZone({
             -- icon = 'fa-solid fa-bullseye',
             label =  Strings['craft_use2'],
             groups = Config.job_name,
+            distance = Config.DistanceOxTarget,
             onSelect = function(data)
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                     lib.showContext(Strings['craft2'])
@@ -578,6 +584,63 @@ exports.ox_target:addBoxZone({
     }
 })
 
+
+-- Craft 3 Menu --- 
+
+
+
+lib.registerContext({
+    id = Strings['craft3'],
+    title = Strings['craft3'],
+    options = (function()
+        local menuOptions = {}
+        for _, item in ipairs(Config.CraftItems3) do
+            table.insert(menuOptions, {
+                title = item.title,
+                description = item.description,
+                -- icon = 'fa-solid fa-bullseye',
+                onSelect = function()
+                    if lib.progressCircle({
+                        duration = 7000,
+                        position = 'bottom',
+                        useWhileDead = false,
+                        canCancel = true,
+                        disable = { car = true },
+                        anim = { dict = 'amb@prop_human_bbq@male@idle_a', clip = 'idle_c' },
+                    }) then 
+                        TriggerServerEvent('BX-' .. Config.job_name .. ':craftItem', item.craftItems, item.rewardItem)
+                    else 
+                        Notify(Strings['need_ingrédient'], 'error')
+                    end
+                end
+            })
+        end
+        return menuOptions
+    end)()
+})
+
+
+
+exports.ox_target:addBoxZone({
+    coords = Config.craft3,
+    size = vec3(2, 2, 2),
+    rotation = 45,
+    options = {
+        {
+            name = Strings['craft_use3'],
+            event = 'ox_target:debug',
+            -- icon = 'fa-solid fa-bullseye',
+            label =  Strings['craft_use3'],
+            groups = Config.job_name,
+            distance = Config.DistanceOxTarget,
+            onSelect = function(data)
+                if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
+                    lib.showContext(Strings['craft3'])
+                end
+        	end
+        }
+    }
+})
 
 
 
@@ -602,6 +665,7 @@ exports.ox_target:addBoxZone({
             -- icon = 'fa-solid fa-dice-d6',
             label = Strings['fridge'],
             groups = Config.job_name,
+            distance = Config.DistanceOxTarget,
             onSelect = function(data)
                 if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                     exports.ox_inventory:openInventory('stash', 'stock_' .. Config.job_name)
@@ -1346,6 +1410,7 @@ if Config.CustomCloth == "standalone" or Config.CustomCloth == "custom" then
                 -- icon = 'fa-solid fa-cars',
                 label = Strings['outfit_job'],
                 groups = Config.job_name,
+                distance = Config.DistanceOxTarget,
                 onSelect = function(data)
                     if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                         if Config.CustomCloth == "standalone" then
@@ -1490,6 +1555,7 @@ if Config.Mission then
                     event = 'BX-' .. Config.job_name .. ':openJobMission',
                     -- icon = 'fa-solid fa-shopping-cart',
                     groups = Config.job_name,
+                    distance = Config.DistanceOxTarget,
                     label = Strings['mission']
                     
                 }
@@ -1582,6 +1648,7 @@ if Config.Mission then
                     -- icon = 'fa-solid fa-box',
                     label = Strings['delivery'],
                     groups = Config.job_name,
+                    distance = Config.DistanceOxTarget,
                     onSelect = function(data)
                         if ESX.PlayerData.job and ESX.PlayerData.job.name == Config.job_name then
                             TriggerServerEvent('BX-' .. Config.job_name .. 'delivery:exchangeItem')
