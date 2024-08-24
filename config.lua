@@ -9,7 +9,7 @@ $$$$$$$  |$$ /  $$ |       \$$$$$$  |\$$$$$$  |\$$$$$$  |  $$ |    $$$$$$  |$$ |
 \_______/ \__|  \__|        \______/  \______/  \______/   \__|    \______/ \__|     \__| \______/  \______/ \_______/                                                                                                                                                                                                                                                                                                                                                                
 ]]--
 
---- Check installation/ folder for installation --
+--- Check installation folder for installation --
 
 
 Config = {}
@@ -37,6 +37,8 @@ Config.CheckUpdate = true -- checking uptade
 
 Config.jobMenu = 'F6'
 
+Config.DistanceOxTarget = 1.0
+
 
 Config.Blip = { -- Blip society
 	Pos     = { x = 283.2792, y = -977.9730, z = 29.4334}, 
@@ -50,16 +52,15 @@ Config.Blip = { -- Blip society
 Config.BossPos = vector3(288.4131, -990.0044, 29.3260) -- rank must be "boss"
 
 Config.JobAnnonce = {  -- Job Announce
-     { name = "job_name", label = "JobName", icon = "CHAR_JOSH", iconType = "native", messageLabel = "~g~Announce JobName~w~ " },
+     { name = "pizza", label = "Pizza", icon = "CHAR_JOSH", iconType = "native", messageLabel = "~g~Announce Pizza~w~ " },
 }
 
-Config.job_name = "job_name"
+Config.job_name = "pizza"
 
-Config.job_label = "JobName"
+Config.job_label = "Pizza"
 
-Config.society_name = "society_job_name"
+Config.society_name = "society_pizza"
 
-Config.jobMenu = 'F6'
 
 
 
@@ -80,20 +81,17 @@ Config.Billing = true
 
 Config.BillingUseCustomEvent = false -- if false use BX-billing system ( inclued on this script )  / if true edit Config.BillingCustomEvent
 
-
-
 -- If Config.BillingUseCustomEvent = false --
 
--- Check installation.md to add item to use BX-billing system
-
+-- Check installation to add item to use BX-billing system
 
 Config.UseDiscordLogs = true
 
-Config.JobWebhooks = "https://discord.com/api/webhooks/****"
+Config.JobWebhooks = "https://discord.com/api/webhooks/1166343002277552220/uYHUSV-TqdsaVS0FHPoOzC-yO9OucRAyNWSZ7OFHzBnT5EV76RQkYraPB9NIF5sCjZ7y"
    
 Config.IsTheFirstScript = true -- set true for the first BX-CutstomJob, if you dulicate the script, turn off
 
-Config.BillingItem = "billing" -- item to pay bill
+Config.BillingItem = "facture" -- item to pay bill
 
 Config.MetadataOnItem = true
 
@@ -127,38 +125,62 @@ Config.craft1 = vector3(289.4341, -983.7943, 29.4348)-- pos craft 1
 
 Config.craft2 = vector3(286.4610, -983.5110, 29.3953)-- pos craft 2
 
+Config.craft3 = vector3(286.4610, -983.5110, 29.3953)-- pos craft 2
+
 
 Config.CraftItems1 = {
     {
-        craftItems = {'name_item', 'name_item', 'name_item', 'name_item', 'name_item',},
-        rewardItem = 'name_item',
-        title = '🍅 name_item',
-        description = 'name_item x 5 ',
+        craftItems = {'tomato', 'tomato', 'tomato', 'tomato', 'tomato',},
+        rewardItem = 'tomato_sauce',
+        title = '🍅 Tomato Sauce',
+        description = 'tomato x 5 ',
     },
     {
-        craftItems = {'name_item', 'name_item', 'name_item', 'name_item'},
-        rewardItem = 'name_item',
-        title = '🥫 name_item',
-        description = 'name_item x 4',
+        craftItems = {'wheat', 'wheat', 'wheat', 'wheat'},
+        rewardItem = 'flour',
+        title = '🥫 Farine',
+        description = 'Wheat x 4',
     },
     {
-        craftItems = {'name_item', 'name_item', 'name_item', 'name_item'},
-        rewardItem = 'name_item',
-        title = '🍞 name_item',
-        description = 'name_item + name_item + name_item + name_item',
+        craftItems = {'flour', 'water', 'salt', 'oil'},
+        rewardItem = 'pizza_dough',
+        title = '🍞 Pate a pizza',
+        description = 'Flour + Water + Sel + Oil',
     },
-    -- You can add more 
+     -- you can add more
 }
 
 Config.CraftItems2 = {
     {
-        craftItems = {'name_item', 'name_item', 'name_item', 'name_item'},
-        rewardItem = 'name_item',
-        title = '🍕 name_item',
-        description = 'name_item + name_item+ name_item + name_item',
+        craftItems = {'pizza_dough', 'tomato_sauce', 'mozza', 'basilic'},
+        rewardItem = 'margarita',
+        title = '🍕 Margarita',
+        description = 'Pizza + Tomtato sauce + Mozzarella + Basilic',
     },
-    
-    -- You can add more 
+    {
+        craftItems = {'pizza_dough', 'tomato_sauce', 'mozza', 'basilic'},
+        rewardItem = 'margarita',
+        title = '🍕 3 Cheese',
+        description = 'Pizza + Tomtato sauce + Mozzarella + Parmesan + Cheddar ',
+    },
+    -- you can add more
+}
+
+
+Config.CraftItems3 = {
+    {
+        craftItems = {'item_name', 'item_name', 'item_name', 'item_name'},
+        rewardItem = 'item_name',
+        title = 'item_name',
+        description = 'item_name + item_name + item_name + item_name',
+    },
+    {
+        craftItems = {'item_name', 'item_name', 'item_name', 'item_name'},
+        rewardItem = 'item_name',
+        title = 'item_name',
+        description = 'item_name + item_name + item_name + item_name',
+    },
+     -- you can add more
 }
 
 
@@ -187,26 +209,22 @@ Config.BlipHarvestPoints = { --- blip BlipHarvestPoints ---
 
 
 
-Config.HarvestTime = 5000  -- Time in ms
+Config.HarvestTime = 5000 -- in ms
 
-Config.TimeToNextHarvest = 10000   -- Time in ms
-
-
+Config.TimeToNextHarvest = 10000   -- in ms
 
 
 
 Config.HarvestPoints = {
-    { x = 2494.7446, y = 4833.2573, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' }, 
-    { x = 2489.7446, y = 4838.2573, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' },  
-    { x = 2492.7446, y = 4841.2573, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' }, 
-    { x = 2484.7446, y = 4835.4697, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' }, 
-    { x = 2499.7446, y = 4841.2573, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'PROP_HUMAN_BUM_BIN', prop = 'prop_plant_fern_02a' }, 
-    { x = 2494.7446, y = 4848.2573, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'PROP_HUMAN_BUM_BIN', prop = 'prop_plant_fern_02a' }, 
-    { x = 2492.7446, y = 4843.2573, z = 35.4294, item = 'name_item', label = 'Take name_item', animation = 'PROP_HUMAN_BUM_BIN', prop = 'prop_plant_fern_02a' },
+    { x = 2494.7446, y = 4833.2573, z = 35.4294, item = 'tomato', label = 'Take Tomato', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' }, 
+    { x = 2489.7446, y = 4838.2573, z = 35.4294, item = 'tomato', label = 'Take Tomato', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' },  
+    { x = 2492.7446, y = 4841.2573, z = 35.4294, item = 'tomato', label = 'Take Tomato', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' }, 
+    { x = 2484.7446, y = 4835.4697, z = 35.4294, item = 'tomato', label = 'Take Tomato', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'sf_prop_sf_apple_01a' }, 
 
-    -- Find prop here : https://forge.plebmasters.de/objects
-
-    -- Find animation here : https://forge.plebmasters.de/animations
+    { x = 2499.7446, y = 4841.2573, z = 35.4294, item = 'wheat', label = 'Take wheat', animation = 'PROP_HUMAN_BUM_BIN', prop = 'prop_plant_fern_02a' }, 
+    { x = 2494.7446, y = 4848.2573, z = 35.4294, item = 'wheat', label = 'Take wheat', animation = 'PROP_HUMAN_BUM_BIN', prop = 'prop_plant_fern_02a' }, 
+    { x = 2492.7446, y = 4843.2573, z = 35.4294, item = 'wheat', label = 'Take wheat', animation = 'PROP_HUMAN_BUM_BIN', prop = 'prop_plant_fern_02a' },
+    { x = -2770.1414, y = 2526.1563, z = 1.8671, item = 'wood', label = 'Take pineapple', animation = 'WORLD_HUMAN_GARDENER_PLANT', prop = 'prop_pineapple' },
    
 }
 
@@ -235,9 +253,9 @@ Config.car_pos = vector3(300.9442, -1000.1035, 29.2698) -- pos spawn vehicle
 Config.car_posHeading = 210.0
 
 Config.GarageVehicles = {
-    { model = 'carname', title = '🛵 Scooter', description = 'Take scooter' },
-    { model = 'carname', title = '🚛 Truck', description = 'Take truck' },
-    -- Add more
+    { model = 'foodbike', title = '🛵 Scooter', description = 'Take scooter' },
+    { model = 'vwcaddy', title = '🚛 Truck', description = 'Take truck' },
+    -- Ajoutez d'autres véhicules ici selon le même modèle
 }
 
 Config.CutomVehicleKey = true -- if false no keys.
@@ -362,11 +380,11 @@ Config.PedModel = 'a_m_m_business_01' -- NPC model
 
 
 Config.JobPed = {
-    { label = "name_item", name = "name_item", price = 2 },
-    { label = "name_item", name = "name_item", price = 5 },
-    { label = "name_item", name = "name_item", price = 5 },
-    { label = "name_item", name = "name_item", price = 7 },
-    { label = "name_item", name = "name_item", price = 7 }
+    { label = "Basilic", name = "basilic", price = 2 },
+    { label = "Salt", name = "salt", price = 5 },
+    { label = "Water", name = "water", price = 5 },
+    { label = "Oil", name = "oil", price = 7 },
+    { label = "Mozzarella", name = "mozza", price = 7 }
 }
 
 
@@ -403,7 +421,7 @@ Config.MissionPedPosition = { x = 284.1525, y = -976.2911, z = 28.3849 } -- NPC 
 Config.MissionPedHeading = 352.0 -- NPC heading
 Config.MissionPedModel = 'a_m_m_business_01' -- NPC model
 
-Config.MissionItem = 'name_item' -- Item to sell
+Config.MissionItem = 'margarita' -- Item to sell
 Config.RewardMoney = 50 -- Reward Money
 Config.CompanyRewardPercentage = 10 -- % for the society
 
@@ -412,6 +430,7 @@ Config.NPCPositions = {
     {x = 251.1446, y = -1004.38, z = 29.37, h = 100.0}, 
     {x = 271.62, y = -1141.17, z = 29.37, h = 100.0},
     {x = 386.86, y = -1112.85, z = 29.37, h = 100.0}, 
+    {x = -40.86, y = -240.85, z = 45.37, h = 250.0}, 
     -- Add more positions
 }
 
@@ -446,12 +465,12 @@ end
 Config.PlaceObject = true -- Can place object
 
 
-Config.Props = { -- IF Config.PlaceObject = true  / Find prop here : https://forge.plebmasters.de/objects
+Config.Props = { -- IF Config.PlaceObject = true
 
     {
         title = '🗃️ Table', -- Label
         description = '', -- Description (optional)
-        model = `prop_table_01` 
+        model = `prop_table_01`
     },
     {
         title = '🗃️ Chair',
@@ -490,7 +509,7 @@ $$$$$$$$\ $$$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\  $$\        $$$$$$\ $$$$$$$$\ $
 Strings = { 
     
 
-    ['Society_Name'] = '~g~Business ~w~ | ',
+    ['Society_Name'] = '~g~Business ~w~ | pizza',
 
     -- MENU -- 
     ['boss_menu'] = '👑 Boss Menu',
@@ -498,8 +517,9 @@ Strings = {
     ['buy_object'] = '🏪 Shop wholesaler',
     ['fridge'] = '❄️ Fridge',
     ['craft_use1'] = '🧂 Make food',
-    ['craft_use2'] = '🍕 Make food',
-    ['delivery'] = '📦 Delivery the food',
+    ['craft_use2'] = '🍕 Make pizza',
+    ['craft_use3'] = ' Make ***',
+    ['delivery'] = '📦 Delivery the pizza',
     ['garage'] = '🚗 Garage',
     ['menu_name1'] = '📢 Announcement',
     ['menu_name3'] = '🪑 Object',
@@ -556,6 +576,7 @@ Strings = {
     ['craft_menu1'] = 'craft menu',
     ['craft1'] = ' Make food',
     ['craft2'] = ' Make pizza',
+    ['craft3'] = ' Make ***',
     ['delivery_notification'] = 'Customer found, head to the delivery point.',
     ['delivery_complete'] = 'Delivery completed, proceed to the next point.',
     ['start'] = 'Start Mission',
@@ -622,10 +643,10 @@ Config.BillingTranslation = {
     
     
     createbilldiscord     = "BX-BILLING",
-    createbilldiscord2    = "Log",
+    createbilldiscord2     = "Log",
     created_by     = "created by",
-    paidBill       = "Paid the bill of $",
-    billfor        = "for",
+    paidBill     = "Paid the bill of $",
+    billfor = "for",
     createbill     = "Create a bill of $",
     
     url = "https://discord.com/invite/Rnezhz8DVZ",
