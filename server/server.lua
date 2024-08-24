@@ -5,9 +5,9 @@ TriggerEvent('esx_society:registerSociety', Config.job_name, Config.job_label, C
     type = 'public'
 })
 
-Citizen.CreateThread(function()
-	exports.ox_inventory:RegisterStash("stock_" .. Config.job_name, "Stock", 100, 100000, false, Config.job_name)
-end)
+
+exports.ox_inventory:RegisterStash("stock_" .. Config.job_name, "Stock", 100, 100000, false, Config.job_name)
+
 
 RegisterServerEvent('BX-' .. Config.job_name .. ':craftItem')
 AddEventHandler('BX-' .. Config.job_name .. ':craftItem', function(craftItems, rewardItem)
