@@ -1,6 +1,5 @@
 local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version', 0)
 local resourceName = GetCurrentResourceName()
-local expectedResourceName = "BX-CustomJob"
 
 local versionURL = "https://raw.githubusercontent.com/BX-DEV-FIVEM/BX.Version/refs/heads/main/version.lua"
 
@@ -17,7 +16,7 @@ PerformHttpRequest(versionURL, function(err, response, headers)
                         print("  //\n  || ^1   " .. resourceName .. "^0 from ^5BX-DEV^0")
                         print("  ||    Last Version: ❌ ")
                         print(string.format("  ||    ^3New version available!^0 Current Version: ^1%s^0, Latest Version: ^2%s^0  ", currentVersion, remoteVersion))
-                        print("  || ^5   https://keymaster.fivem.net ^0\n  \\\\")
+                        print("  || ^5 Download it on : https://bx-dev.tebex.io/ ^0\n  \\\\")
    
                 else
                     print("^2[INFO]^1 " .. resourceName .. " ^0from ^5BX-DEV^0 is update ✔️")
@@ -38,10 +37,3 @@ end)
     end
 
 
-
-AddEventHandler('onResourceStart', function(resourceName)
-        if GetCurrentResourceName() ~= expectedResourceName then
-            print("^1 [ERROR] ^3 Ressource Name must be ".. expectedResourceName .." ^0")
-        end
-    
-    end)
